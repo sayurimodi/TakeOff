@@ -4,6 +4,9 @@ import SignUpScreen from './screens/signUp';
 import ProfileScreen from './screens/profile';
 import HomeScreen from './screens/home';
 
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+
+
 
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -22,15 +25,22 @@ const App = () => {
          <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{title: 'Welcsdsdsome', headerShown: false}}
-        />
+          options={{title: 'Hi, First Name Last Name!',
+          headerStyle: {
+            backgroundColor: '#cedeed', 
+          },
+          headerTitleStyle: {
+            color: '#00334d',  fontSize: wp(5)
+          },
+        }} />
+        
         <Stack.Screen name="SignUp" component={SignUpScreen} 
-                  options={{title: 'Back to start',
+                  options={{title: 'Back ',
                   headerStyle: {
-                    backgroundColor: '#87e8a7', 
+                    backgroundColor: '#cedeed', 
                   },
                   headerTitleStyle: {
-                    color: '#00334d', 
+                    color: '#00334d',
                   },
                 }} />
 
@@ -40,7 +50,7 @@ const App = () => {
           options={{title: 'Back',
                 
                   headerStyle: {
-                    backgroundColor: '#c8d5e3', // Dark blue color
+                    backgroundColor: '#cedeed', // Dark blue color
       
                   },
                   headerTitleStyle: {
